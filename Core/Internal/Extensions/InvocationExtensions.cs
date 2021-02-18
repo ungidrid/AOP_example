@@ -66,7 +66,7 @@ namespace Core.Internal.Extensions
                         $"The Interceptor Attribute '{interceptionAttribute}' is applied to the method, but there is no configured interceptor to handle it");
                 }
 
-                var instance = (MethodInterceptor)ActivatorUtilities.CreateInstance(serviceProvider, interceptorType);
+                var instance = (AspectBase)ActivatorUtilities.CreateInstance(serviceProvider, interceptorType);
 
                 var context = new InvocationContext
                 {

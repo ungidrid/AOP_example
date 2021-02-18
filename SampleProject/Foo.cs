@@ -33,8 +33,8 @@ namespace SampleProject
             throw new Exception();
         }
 
+        [ClearInterceptors]
         [Cache(ExpireIn = 9000)]
-        [Benchmarking]
         public DateTime TestMethodWithExpiration() 
         {
             _logger.LogInformation("\t===> The Real Method With Expiration is Executed Here! <===");
@@ -42,6 +42,7 @@ namespace SampleProject
             return DateTime.Now;
         }
 
+        [ClearInterceptors]
         [UnitOfWork]
         public void AddEntity(IUnitOfWork unitOfWork = null)
         {
@@ -55,6 +56,7 @@ namespace SampleProject
             entities.ToList().ForEach(unitOfWork.Entities.Add);
         }
 
+        [ClearInterceptors]
         [UnitOfWork(SaveChanges = false)]
         public void PrintEntities(IUnitOfWork unitOfWork = null)
         {

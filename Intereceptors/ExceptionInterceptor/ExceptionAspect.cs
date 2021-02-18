@@ -5,11 +5,11 @@ using Microsoft.Extensions.Logging;
 
 namespace Intereceptors.ExceptionInterceptor
 {
-    public class ExceptionInterceptor: MethodInterceptor
+    public class ExceptionAspect: AspectBase
     {
-        private readonly ILogger<ExceptionInterceptor> _logger;
+        private readonly ILogger<ExceptionAspect> _logger;
 
-        public ExceptionInterceptor(ILogger<ExceptionInterceptor> logger)
+        public ExceptionAspect(ILogger<ExceptionAspect> logger)
         {
             _logger = logger;
         }

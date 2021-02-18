@@ -5,11 +5,11 @@ using Microsoft.Extensions.Caching.Memory;
 
 namespace Intereceptors.Caching
 {
-    public class CacheInterceptor: MethodBoundaryInterceptor
+    public class CacheAspect: MethodBoundaryAspect
     {
         private readonly IMemoryCache _memoryCache;
 
-        public CacheInterceptor(IMemoryCache memoryCache)
+        public CacheAspect(IMemoryCache memoryCache)
         {
             _memoryCache = memoryCache;
         }

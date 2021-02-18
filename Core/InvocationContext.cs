@@ -12,7 +12,7 @@ namespace Core
     public class InvocationContext
     {
         internal InterceptionAttribute Attribute { get; set; }
-        internal MethodInterceptor Interceptor { get; set; }
+        internal AspectBase Interceptor { get; set; }
         internal IInvocation Invocation { get; set; }
         internal IServiceProvider ServiceProvider { get; set; }
         internal bool InvocationIsBypassed { get; set; }

@@ -4,7 +4,7 @@ using Core.Attributes;
 
 namespace Intereceptors.UnitOfWork
 {
-    public class UnitOfWorkAttribute: InterceptionAttribute, IInterceptorAttribute<UnitOfWorkInterceptor>
+    public class UnitOfWorkAttribute: InterceptionAttribute, IInterceptorAttribute<UnitOfWorkAspect>
     {
         public bool SaveChanges { get; set; } = true;
     }

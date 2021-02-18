@@ -2,7 +2,7 @@
 
 namespace Core.Abstract
 {
-    public abstract class MethodBoundaryInterceptor: MethodInterceptor
+    public abstract class MethodBoundaryAspect: AspectBase
     {
         public sealed override void Invoke(InvocationContext invocationContext, Action next)
         {

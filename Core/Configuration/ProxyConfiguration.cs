@@ -9,8 +9,8 @@ namespace Core.Configuration
     {
         public List<IInterceptorMapping> ConfiguredInterceptors { get; set; } = new List<IInterceptorMapping>();
 
-        public ProxyConfiguration AddInterceptor<TAttribute, TInterceptor>() where TAttribute : IInterceptorAttribute<TInterceptor>
-                                                                             where TInterceptor : MethodInterceptor
+        public ProxyConfiguration AddAspect<TAttribute, TInterceptor>() where TAttribute : IInterceptorAttribute<TInterceptor>
+                                                                             where TInterceptor : AspectBase
         {
             ConfiguredInterceptors.Add(new InterceptorMapping<TAttribute, TInterceptor>());
             return this;

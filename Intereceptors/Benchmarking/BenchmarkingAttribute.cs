@@ -4,7 +4,7 @@ using Core.Attributes;
 
 namespace Intereceptors.Benchmarking
 {
-    public class BenchmarkingAttribute: InterceptionAttribute, IInterceptorAttribute<BenchmarkingInterceptor>
+    public class BenchmarkingAttribute: InterceptionAttribute, IInterceptorAttribute<BenchmarkingAspect>
     {
     }
 }

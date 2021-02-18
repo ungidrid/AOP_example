@@ -5,12 +5,12 @@ using Core.Attributes;
 
 namespace Intereceptors.UnitOfWork
 {
-    public class UnitOfWorkInterceptor: MethodBoundaryInterceptor
+    public class UnitOfWorkAspect: MethodBoundaryAspect
     {
         private Lazy<IUnitOfWork> _unitOfWork;
         private UnitOfWorkAttribute _attribute;
 
-        public UnitOfWorkInterceptor(IUnitOfWorkFactory unitOfWorkFactory)
+        public UnitOfWorkAspect(IUnitOfWorkFactory unitOfWorkFactory)
         {
             _unitOfWork = new Lazy<IUnitOfWork>(unitOfWorkFactory.Create);
         }

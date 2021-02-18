@@ -5,13 +5,13 @@ using Microsoft.Extensions.Logging;
 
 namespace Intereceptors.Logging
 {
-    public class LogInterceptor: MethodBoundaryInterceptor
+    public class LogAspect: MethodBoundaryAspect
     {
         private readonly ILoggerFactory _loggerFactory;
         private ILogger _logger;
         private LogAttribute _logAttribute;
 
-        public LogInterceptor(ILoggerFactory loggerFactory)
+        public LogAspect(ILoggerFactory loggerFactory)
         {
             _loggerFactory = loggerFactory;
         }

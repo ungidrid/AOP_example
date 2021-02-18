@@ -23,19 +23,19 @@ namespace SampleProject
 
         static async Task Main(string[] args)
         {
-            //Example 1
             var testProxy = ServiceProvider.GetService<IFoo>();
-            testProxy.TestMethod();
+            //Example 1
+            // testProxy.TestMethod();
 
             //Example 2
-            var time1 = testProxy.TestMethodWithExpiration();
-            var time2 = testProxy.TestMethodWithExpiration();
-            await Task.Delay(10000);
-            var time3 = testProxy.TestMethodWithExpiration();
-            Console.WriteLine($"Time 1: {time1.TimeOfDay}, Time 2: {time2.TimeOfDay}, Time 3: {time3.TimeOfDay}");
-
-
-            //Example 3
+            // var time1 = testProxy.TestMethodWithExpiration();
+            // var time2 = testProxy.TestMethodWithExpiration();
+            // await Task.Delay(10000);
+            // var time3 = testProxy.TestMethodWithExpiration();
+            // Console.WriteLine($"Time 1: {time1.TimeOfDay}, Time 2: {time2.TimeOfDay}, Time 3: {time3.TimeOfDay}");
+            
+            //
+            // //Example 3
             testProxy.AddEntity();
             testProxy.PrintEntities();
         }
@@ -49,12 +49,12 @@ namespace SampleProject
                 c => c.AddConsole()
                     .SetMinimumLevel(LogLevel.Trace));
 
-            services.AddInterceptors(
-                x => x.AddInterceptor<LogAttribute, LogInterceptor>()
-                    .AddInterceptor<BenchmarkingAttribute, BenchmarkingInterceptor>()
-                    .AddInterceptor<CacheAttribute, CacheInterceptor>()
-                    .AddInterceptor<ExceptionAttribute, ExceptionInterceptor>()
-                    .AddInterceptor<UnitOfWorkAttribute, UnitOfWorkInterceptor>());
+            services.AddAspects(
+                x => x.AddAspect<LogAttribute, LogAspect>()
+                    .AddAspect<BenchmarkingAttribute, BenchmarkingAspect>()
+                    .AddAspect<CacheAttribute, CacheAspect>()
+                    .AddAspect<ExceptionAttribute, ExceptionAspect>()
+                    .AddAspect<UnitOfWorkAttribute, UnitOfWorkAspect>());
 
             services.AddTransient<IUnitOfWorkFactory, UnitOfWorkFactory>();
             services.AddTransientWithProxy<IFoo, Foo>();

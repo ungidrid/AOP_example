@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Intereceptors.Logging
 {
-    public class LogAttribute: InterceptionAttribute, IInterceptorAttribute<LogInterceptor>
+    public class LogAttribute: InterceptionAttribute, IInterceptorAttribute<LogAspect>
     {
         internal LogLevel LogLevel { get; set; }
 

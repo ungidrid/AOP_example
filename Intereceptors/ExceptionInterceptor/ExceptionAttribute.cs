@@ -4,7 +4,7 @@ using Core.Attributes;
 
 namespace Intereceptors.ExceptionInterceptor
 {
-    public class ExceptionAttribute: InterceptionAttribute, IInterceptorAttribute<ExceptionInterceptor>
+    public class ExceptionAttribute: InterceptionAttribute, IInterceptorAttribute<ExceptionAspect>
     {
     }
 }

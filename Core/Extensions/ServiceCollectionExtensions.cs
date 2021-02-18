@@ -9,7 +9,7 @@ namespace Core.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddInterceptors(this IServiceCollection services, Action<ProxyConfiguration> configuration)
+        public static IServiceCollection AddAspects(this IServiceCollection services, Action<ProxyConfiguration> configuration)
         {
             services.AddOptions();
             services.Configure(configuration);

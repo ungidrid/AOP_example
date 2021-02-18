@@ -5,12 +5,12 @@ using Microsoft.Extensions.Logging;
 
 namespace Intereceptors.Benchmarking
 {
-    public class BenchmarkingInterceptor: MethodBoundaryInterceptor
+    public class BenchmarkingAspect: MethodBoundaryAspect
     {
         private readonly ILogger _logger;
         private readonly Stopwatch _stopWatch;
 
-        public BenchmarkingInterceptor(ILogger<BenchmarkingInterceptor> logger)
+        public BenchmarkingAspect(ILogger<BenchmarkingAspect> logger)
         {
             _stopWatch = new Stopwatch();
             _logger = logger;
